@@ -2,7 +2,7 @@
 /* TRACCIA
 
 Stampare tutti i nostri hotel con tutti i dati disponibili.
-Iniziate in modo graduale. Prima stampate in pagina i dati, senza preoccuparvi dello stile.
+FATTO - Iniziate in modo graduale. Prima stampate in pagina i dati, senza preoccuparvi dello stile.
 Dopo aggiungete Bootstrap e mostrate le informazioni con una tabella.
 Bonus: 1
 Aggiungere un form ad inizio pagina che tramite una richiesta GET permetta di filtrare gli hotel che hanno un parcheggio.
@@ -64,6 +64,8 @@ $hotels = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -74,12 +76,22 @@ $hotels = [
             <!-- metto l'apertura del foreach -->
             <?php foreach ($hotels as $hotel) : ?>
                 <!-- lista con nome e servizi dei vari hotle -->
-                <li> Nome dell'hotel: <strong><?php echo $hotel['name'] ?></strong></li>
-                <li> Descrizione dell'hotel: <?php echo $hotel['description'] ?> </li>
-                <li> Presenza del parcheggio: <?php echo $hotel['parking'] ?> </li>
-                <li> Valutazione dell'hotel: <?php echo $hotel['vote'] ?> </li>
-                <li> Nome dell'hotel:<?php echo $hotel['distance_to_center'] ?> </li>
-            <!-- metto la chiusura del foreach -->
+                <li>
+                    <div>Nome dell'hotel: <strong><?php echo $hotel['name'] ?></strong></div>
+                    <div>Descrizione dell'hotel: <?php echo $hotel['description'] ?></div>
+                    <div>Presenza del parcheggio:
+                        <!-- se parking===true allora deve stampare "presente" altrimenti "assente" -->
+                        <?php
+                        if ($hotel['parking'] === true) {
+                            echo 'presente';
+                        } else {
+                            echo 'assente';
+                        } ?>
+                    </div>
+                    <div>Valutazione dell'hotel: <?php echo $hotel['vote'] ?></div>
+                    <div>Distanza dal centro: <?php echo $hotel['distance_to_center'] ?> km</div>
+                </li>
+                <!-- metto la chiusura del foreach -->
             <?php endforeach; ?>
 
         </ul>
