@@ -74,11 +74,13 @@ $hotels = [
             <!-- metto l'apertura del foreach -->
             <?php foreach ($hotels as $hotel) : ?>
                 <!-- lista con nome e servizi dei vari hotle -->
-                <li> Nome dell'hotel: <strong><?php echo $hotel['name'] ?></strong></li>
-                <li> Descrizione dell'hotel: <?php echo $hotel['description'] ?> </li>
-                <li> Presenza del parcheggio: <?php echo $hotel['parking'] ?> </li>
-                <li> Valutazione dell'hotel: <?php echo $hotel['vote'] ?> </li>
-                <li> Nome dell'hotel:<?php echo $hotel['distance_to_center'] ?> </li>
+                <li> 
+                <div>Nome dell'hotel: <strong><?php echo $hotel['name'] ?></strong></div>
+                <div>Descrizione dell'hotel: <?php echo $hotel['description'] ?></strong></div> 
+                <div>Presenza del parcheggio: <?php echo $hotel['parking'] ?></strong></div>
+                <div>Valutazione dell'hotel: <?php echo $hotel['vote'] ?></strong></div>
+                <div>Nome dell'hotel:<?php echo $hotel['distance_to_center'] ?></div>     
+                </li>
             <!-- metto la chiusura del foreach -->
             <?php endforeach; ?>
 
