@@ -76,21 +76,21 @@ $hotels = [
             <!-- metto l'apertura del foreach -->
             <?php foreach ($hotels as $hotel) : ?>
                 <!-- lista con nome e servizi dei vari hotle -->
-                <li>
-                    <div>Nome dell'hotel: <strong><?php echo $hotel['name'] ?></strong></div>
-                    <div>Descrizione dell'hotel: <?php echo $hotel['description'] ?></div>
-                    <div>Presenza del parcheggio:
-                        <!-- se parking===true allora deve stampare "presente" altrimenti "assente" -->
-                        <?php
-                        if ($hotel['parking'] === true) {
-                            echo 'presente';
-                        } else {
-                            echo 'assente';
-                        } ?>
-                    </div>
-                    <div>Valutazione dell'hotel: <?php echo $hotel['vote'] ?></div>
-                    <div>Distanza dal centro: <?php echo $hotel['distance_to_center'] ?> km</div>
-                </li>
+                <div>Nome dell'hotel: <strong><?php echo $hotel['name'] ?></strong></div>
+                <div>Descrizione dell'hotel: <?php echo $hotel['description'] ?></div>
+                <div>Presenza del parcheggio:
+                    <!-- se parking === true stampa "presente" altrimenti stamp "assente" -->
+                    <?php
+                    if ($hotel['parking'] === true) {
+                        echo 'presente';
+                    } else {
+                        echo 'assente';
+                    }
+                    ?>
+                </div>
+                <div>Valutazione dell'hotel: <?php echo $hotel['vote'] ?></strong></div>
+                <div>Distanza dal centro: <?php echo $hotel['distance_to_center'] ?> km</div>
+
                 <!-- metto la chiusura del foreach -->
             <?php endforeach; ?>
 
