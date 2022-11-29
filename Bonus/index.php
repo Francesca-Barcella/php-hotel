@@ -16,6 +16,7 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
 
 */
 
+
 $hotels = [
 
     [
@@ -53,10 +54,11 @@ $hotels = [
         'vote' => 2,
         'distance_to_center' => 50
     ],
-
+    
 ];
 
-//var_dump($hotels)
+//var_dump($hotels);
+//var_dump($_GET);
 
 ?>
 
@@ -89,6 +91,7 @@ $hotels = [
                     <option value="presente">Presente</option>
                     <option value="assente">Assente</option>
                 </select>
+                
             </div>
             <!-- Aggiungere un secondo campo al form che permetta di filtrare gli hotel per voto (es. inserisco 3 ed ottengo tutti gli hotel che hanno un voto di tre stelle o superiore) -->
             <!-- VALUTAZIONE -->
@@ -101,10 +104,12 @@ $hotels = [
                     <option value="tre_stelle">★★★</option>
                     <option value="quattro_stelle">★★★★</option>
                     <option value="cinque_stelle">★★★★★</option>
-
+                    
                 </select>
             </div>
-
+            <!-- PULSANTI -->            
+            <button type="submit" class="mx-2 px-2">Invia</button>
+            <button type="reset" class="mx-2 px-2">Cancella</button>
         </form>
     </div>
 
